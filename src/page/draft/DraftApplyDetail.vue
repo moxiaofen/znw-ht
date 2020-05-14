@@ -81,6 +81,7 @@
     created() {
         this.FindPoolLimitAmount()
         this.queryContractList()
+        //测试不成熟
     },
 
     methods: {
@@ -89,6 +90,7 @@
            const url = this.$api.ROOT + this.$Constants.FIND_POOL_LIMIT_AMOUNT;
            const data = {
              "contractNo":this.$route.query.id,
+             //"custNo": sessionStorage.getItem('custNo'),
              "custNo": sessionStorage.getItem('custNo'),
            }
            this.$http.post(url,data)
