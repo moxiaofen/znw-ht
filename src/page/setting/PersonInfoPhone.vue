@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <ToolBar page_title="绑定手机" :isWhile="false"></ToolBar> -->
     <van-nav-bar
       class="bar"
       title="绑定手机"
@@ -25,21 +24,15 @@
               <van-button size="small" type="primary" @click="getVerificationCode">发送验证码</van-button>
             </template>
           </van-field>
-
-
         </van-cell-group>    
     </div>
-
 
   </div>
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
-
     components: {
-      ToolBar
     },
     computed: {},
     data() {

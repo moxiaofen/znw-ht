@@ -11,7 +11,7 @@
       </mt-tab-container>
     </div>
 
-    <mt-tabbar v-model="selected" fixed>
+    <mt-tabbar v-model="selected" fixed class="page-up">
       <mt-tab-item id="首页">
         <img slot="icon" :src="borrowIcon">
         <span :style="{color:borrowColor}">首页</span>
@@ -126,5 +126,7 @@
     -ms-user-select: none;
     user-select: none;
   }
-
+.page-up{
+  z-index: 10;
+}
 </style>

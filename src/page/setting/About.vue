@@ -17,11 +17,8 @@
   </div>
 </template>
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
-
     components: {
-      ToolBar
     },
     data() {
       return {}

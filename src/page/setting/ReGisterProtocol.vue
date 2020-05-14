@@ -1,7 +1,6 @@
 <!--进件中,商户协议的内容页面-->
 <template>
   <div class="page">
-    <!-- <ToolBar page_title="中农网用户注册协议" :isWhile="false"></ToolBar> -->
     <van-nav-bar
       class="bar"
       title="中农网用户注册协议"
@@ -500,11 +499,8 @@
   </div>
 </template>
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
-
     components: {
-      ToolBar
     },
     data() {
       return {}

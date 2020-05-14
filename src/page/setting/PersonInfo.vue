@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <ToolBar page_title="个人信息" :isWhile="false"> </ToolBar> -->
     <van-nav-bar
       class="bar"
       title="个人信息"
@@ -23,23 +22,12 @@
 
     </van-cell-group>
 
-   
-
-
-
-      
-      <!-- <LoginButton name="提交" :isInputNonEmpty="enable" @click.native="toNext" borderRadius="6px"></LoginButton> -->
   </div>
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
-  import Divider from '@/components/Divider.vue'
-  import LoginButton from '@/components/LoginButton.vue'
   export default {
     components: {
-      ToolBar
-      
     },
     computed: {},
     data() {

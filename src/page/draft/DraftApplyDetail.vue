@@ -89,7 +89,9 @@
            const url = this.$api.ROOT + this.$Constants.FIND_POOL_LIMIT_AMOUNT;
            const data = {
              "contractNo":this.$route.query.id,
-             "custNo": sessionStorage.getItem('custNo'),
+             //"custNo": sessionStorage.getItem('custNo'),
+             "custNo": 'C000250',
+             
            }
            this.$http.post(url,data)
            .then(function (res) {

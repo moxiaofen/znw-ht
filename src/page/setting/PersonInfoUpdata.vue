@@ -1,7 +1,13 @@
 <template>
   <div>
-    <ToolBar page_title="融资意向申请" :isWhile="false"> </ToolBar>
-
+    <van-nav-bar
+      class="bar"
+      title="个人信息"
+      left-arrow
+      fixed
+      border='false'
+      @click-left="$router.back(-1)"
+    />
     <div class="content">
 
       <!--本次企业名称-->
@@ -9,8 +15,6 @@
         <span class='inputLable'>企业名称</span>
         <input class='inputVal' type="text" ref="rCustName" v-model="vCustName" placeholder="请输入企业名称" />
       </div>
-      <!--横线-->
-      <Divider></Divider>
 
       <div class='top'>
         <span class='common'>证件类型</span>
@@ -18,33 +22,24 @@
           <van-dropdown-item v-model="vIdType" :options="idTypeOpt" />
         </van-dropdown-menu>
       </div>
-      <!--横线-->
-      <Divider></Divider>
 
       <!--证件号码-->
       <div class='top'>
         <span class='inputLable'>证件号码</span>
         <input class='inputVal' type="text" ref="rIdNo" v-model="vIdNo" placeholder="请输入证件号码" />
       </div>
-      <!--横线-->
-      <Divider></Divider>
 
       <!--联系人-->
       <div class='top'>
         <span class='inputLable'>联系人</span>
         <input class='inputVal' type="text" ref="rContact" v-model="vContact" placeholder="请输入联系人" />
       </div>
-      <!--横线-->
-      <Divider></Divider>
 
       <!--联系人电话-->
       <div class='top'>
         <span class='inputLable'>手机号码</span>
         <input class='inputVal' type="text" ref="rContactPhoneNo" v-model="vContactPhoneNo" placeholder="请输入手机号码"  @change="checkContactPhone"/>
       </div>
-      <!--横线-->
-      <Divider></Divider>
-
 
       <!--多选框-->
       <div class='top'>        
@@ -53,24 +48,17 @@
             <van-checkbox :name="index" shape="square"  v-for="(item,index) in checkboxList" class="select-item" :key="item.id" >{{item.title}}</van-checkbox>
           </van-checkbox-group>    
       </div>
-      <!--横线-->
-      <Divider></Divider>
-
-      
+    
       <LoginButton name="提交" :isInputNonEmpty="enable" @click.native="toNext" borderRadius="6px"></LoginButton>
     </div>
   </div>
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
-  import Divider from '@/components/Divider.vue'
   import LoginButton from '@/components/LoginButton.vue'
   export default {
     name: "identity",
     components: {
-      ToolBar,
-      Divider,
       LoginButton
     },
     computed: {},

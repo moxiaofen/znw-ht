@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <ToolBar page_title="绑定邮箱" :isWhile="false"></ToolBar> -->
     <van-nav-bar
       class="bar"
       title="绑定邮箱"
@@ -17,16 +16,12 @@
         </van-cell-group>    
     </div>
 
-
   </div>
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
-
     components: {
-      ToolBar
     },
     computed: {},
     data() {

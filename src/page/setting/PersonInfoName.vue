@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <ToolBar page_title="用户昵称 " :isWhile="false"></ToolBar> -->
     <van-nav-bar
       class="bar"
       title="用户昵称"
@@ -17,16 +16,12 @@
         </van-cell-group>    
     </div>
 
-
   </div>
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
-
     components: {
-      ToolBar
     },
     computed: {},
     data() {

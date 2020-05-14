@@ -83,7 +83,7 @@
           this.$router.push({
             path: this.$RM.DraftApplyDetail,
             //query:{id: this.creditContractNo} 
-            query:{id: 'CON2019062800000079'}        
+            query:{id: 'CON2019082000000292'}        
           })
       },
       cancel(){

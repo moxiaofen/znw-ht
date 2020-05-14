@@ -95,14 +95,10 @@
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
-  import Divider from '@/components/Divider.vue'
   import LoginButton from '@/components/LoginButton.vue'
   export default {
-    name: "identity",
+    name: "companyInfo",
     components: {
-      ToolBar,
-      Divider,
       LoginButton
     },
     computed: {},

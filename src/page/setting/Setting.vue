@@ -1,6 +1,5 @@
 <template>
   <div class="bg">
-      <!-- <ToolBar page_title="设置" :isWhile="false"> </ToolBar> -->
       <van-nav-bar
         class="bar"
         title="设置"
@@ -20,10 +19,8 @@
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
     components: {
-      ToolBar
     },
     data() {
       return {

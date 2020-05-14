@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- <ToolBar page_title="登录密码 " :isWhile="false"></ToolBar> -->
     <van-nav-bar
       class="bar"
       title="登录密码 "
@@ -24,13 +23,9 @@
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   import Encrypt from '../../api/encrypt.js'
-
   export default {
-
     components: {
-      ToolBar
     },
     computed: {},
     data() {

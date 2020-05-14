@@ -15,16 +15,13 @@
         <input class='inputVal' type="text" ref="rAcctCode" v-model="vAcctCode" placeholder="请输入应收账款编号" />
         <img class='clearCss' v-show="false" @click="clear('vAcctCode')" src="../../assets/clear.png" />
       </div>
-      <!--横线-->
-      <Divider></Divider>
+
       <!--付款人（买方）姓名-->
       <div class='top'>
         <span class='inputLable'>付款人（买方）姓名</span>
         <input class='inputVal' type="text" ref="rDraweeName" v-model="vDraweeName" placeholder="请输入姓名" />
         <img class='clearCss' v-show="false" @click="clear('vDraweeName')" src="../../assets/clear.png" />
       </div>
-      <!--横线-->
-      <Divider></Divider>
 
       <!-- 引入组件 -->
       <new-affix :itemShow='true' :optDate='dataTypeOpt' :dataFileList='dataFileList'></new-affix>
@@ -35,16 +32,13 @@
 </template>
 
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
-  import Divider from '@/components/Divider.vue'
+
   import LoginButton from '@/components/LoginButton.vue'
   //import PopCont from './AddReceivablesPop'
   import NewAffix from '../components/new-affix'
 
   export default {
     components: {
-      ToolBar,
-      Divider,
       LoginButton,
       NewAffix
     },

@@ -1,7 +1,6 @@
 <!--进件中,商户协议的内容页面-->
 <template>
   <div class="page">
-    <!-- <ToolBar page_title="免责说明" :isWhile="false"></ToolBar> -->
     <van-nav-bar
       class="bar"
       title="免责说明"
@@ -30,11 +29,8 @@
   </div>
 </template>
 <script>
-  import ToolBar from '@/components/ToolBar2.vue'
   export default {
-
     components: {
-      ToolBar
     },
     data() {
       return {}

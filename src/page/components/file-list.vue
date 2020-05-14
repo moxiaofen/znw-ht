@@ -46,10 +46,8 @@
 </template>
 
 <script>
-  import Divider from '@/components/Divider.vue'
     export default {
         components: {
-          Divider,
         },
         props:['tipFile','fileList'],
         computed: {},
