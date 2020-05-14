@@ -1,47 +1,6 @@
 import Vue from 'vue'
 import RM from '../api/RouterManager'
 import Router from 'vue-router'
-import Main from '@/components/Main'
-import HelpCenter from '@/components/owner/HelpCenter'
-import QueryBusinessArea from '@/components/owner/QueryBusinessArea'
-//import PersonInfo from '@/components/owner/PersonInfo'
-import FeedBack from '@/components/owner/FeedBack'
-import FeedSuccess from '@/components/owner/FeedSuccess'
-import BusinessAccess from '@/components/owner/BusinessAccess'
-import BusinessService from '@/components/owner/BusinessService'
-import AccessInfo from '@/components/owner/AccessInfo'
-import MessageCenter from '@/components/owner/MessageCenter'
-import MessageDetail from '@/components/owner/MessageDetail'
-import AccessSuccess from '@/components/owner/AccessSuccess'
-import Index from '@/components/Index'
-import Register from '@/components/login/Register'
-import Login from '@/components/login/Login'
-import ForgetPwd from '@/components/login/ForgetPwd'
-import WriteOne from '@/components/apply/WriteOne'
-import WriteTwo from '@/components/apply/WriteTwo'
-import Protocol from '@/components/apply/Protocol'
-
-import Operation from '@/components/apply/Operation'
-import Repay from '@/components/repay/Repay'
-import RepaySkip from '@/components/repay/RepaySkip'
-import RepayLoading from '@/components/repay/RepayLoading'
-import securitySetting from '@/components/security/securitySetting'
-import changePwd from '@/components/security/changePwd'
-
-import securityCheck from '@/components/security/securityCheck'
-import fingerLockView from '@/components/security/fingerLockView'
-import changerFingerView from '@/components/security/changerFingerView'
-import SetPwd from '@/components/login/SetPwd'
-import Netbroken from '@/components/error/NetBroken'
-import successFul from '@/components/apply/ApplySuccess'
-
-import quickwriteone from '@/components/apply/QuickWriteOne'
-import quickwritetwo from '@/components/apply/QuickWriteTwo'
-import quickwritethree from '@/components/apply/QuickWriteThree'
-
-//import ReGisterProtocol from '@/components/apply/RegisterProtocol'
-import PersonProtocol from '@/components/apply/PersonProtocol'
-import test from '@/components/CircleRadius'
 ///////////////////////////////
 import HomePage from '@/page/home/Home'
 import MinePage from '@/page/mine/Mine'
@@ -75,8 +34,7 @@ import AddReceivablesApply from '@/page/receivables/AddReceivablesApply'
 import CalculateList from '@/page/calculate/CalculateList'
 import CalculateDetail from '@/page/calculate/CalculateDetail'
 import FianancingApply from '@/page/financing/FianancingApply'
-// import FianancingApplyChange from '@/page/financing/FianancingApplyChange'
-// import FianancingApplyDetail from '@/page/financing/FianancingApplyDetail'
+
 import LedgerList from '@/page/ledger/LedgerList'
 import LedgerDetail from '@/page/ledger/LedgerDetail'
 import LedgerPayment from '@/page/ledger/LedgerPayment'
@@ -132,18 +90,6 @@ export default new Router({
       name: RM.FianancingApply,
       component: FianancingApply
     },
-
-    // {
-    //   path: RM.FianancingApplyChange,
-    //   name: RM.FianancingApplyChange,
-    //   component: FianancingApplyChange
-    // },
-    
-    // {
-    //   path: RM.FianancingApplyDetail,
-    //   name: RM.FianancingApplyDetail,
-    //   component: FianancingApplyDetail
-    // },
     
    {
      path: RM.CalculateDetail,
@@ -407,160 +353,6 @@ export default new Router({
     },
 
 
-
-    
-    
-
-    ////////////////////////////////////
-    {
-      path: RM.Main,
-      name: RM.Main,
-      component: Main
-    },
-    {
-      path: RM.Register,
-      component: Register,
-      meta: {
-        keepAlive: true
-      }
-    },
-    {
-      path: RM.SetPwd,
-      component: SetPwd
-    },
-    {
-      path: RM.Login,
-      component: Login
-    },
-    {
-      path: RM.ForgetPwd,
-      name: RM.ForgetPwd,
-      component: ForgetPwd
-    },
-    {
-      path: RM.HelpCenter,
-      component: HelpCenter
-    }, {
-      path: RM.QueryBusinessArea,
-      component: QueryBusinessArea
-    // }, {
-    //   path: RM.PersonInfo,
-    //   component: PersonInfo
-    },
-    {
-      path: RM.FeedBack,
-      component: FeedBack
-    },
-    {
-      path: RM.FeedSuccess,
-      component: FeedSuccess
-    },
-    {
-      path: RM.BusinessAccess,
-      name: RM.BusinessAccess,
-      component: BusinessAccess
-    },
-    {
-      path: RM.BusinessService,
-      component: BusinessService
-    },
-    {
-      path: RM.AccessInfo,
-      name: RM.AccessInfo,
-      component: AccessInfo
-    },
-    {
-      path: RM.MessageCenter,
-      component: MessageCenter
-    },
-    {
-      path: RM.MessageDetail,
-      component: MessageDetail
-    },
-    {
-      path: RM.AccessSuccess,
-      component: AccessSuccess
-    }, {
-      path: RM.WriteOne,
-      component: WriteOne
-    }, {
-      path: RM.WriteTwo,
-      component: WriteTwo
-    }, {
-      path: RM.Protocol,
-      component: Protocol
-    }, {
-      path: RM.Operation,
-      component: Operation
-    }, {
-      path: RM.Repay,
-      component: Repay
-    }, {
-      path: RM.RepaySkip,
-      component: RepaySkip
-    }, {
-      path: RM.RepayLoading,
-      component: RepayLoading
-    },
-    {
-      path: RM.Netbroken,
-      component: Netbroken
-    }, {
-      path: RM.SecuritySetting,
-      component: securitySetting
-    },
-    {
-      path: RM.ChangePwd,
-      component: changePwd
-    },
-    {
-      path: RM.SecurityCheck,
-      component: securityCheck
-    },
-    {
-      path: RM.FingerLockView,
-      component: fingerLockView
-    },
-    {
-      path: RM.ChangerFingerView,
-      component: changerFingerView
-    },
-    {
-      path: RM.Netbroken,
-      component: Netbroken
-    },
-    {
-      path: RM.Index,
-      component: Index
-    },
-    {
-      path: RM.successFul,
-      component: successFul
-    },
-    {
-      path: RM.quickwriteone,
-      component: quickwriteone
-    },
-    {
-      path: RM.quickwritetwo,
-      component: quickwritetwo
-    },
-    {
-      path: RM.quickwritethree,
-      component: quickwritethree
-    },
-    /*   {
-         path: RM.ReGisterProtocol,
-         component: ReGisterProtocol
-       }, */
-    {
-      path: RM.PersonProtocol,
-      component: PersonProtocol
-    },
-    {
-      path: '/test',
-      component: test
-    }
   ],
   scrollBehavior(to,from,saveTop){ 
     if(saveTop){ return saveTop; }else{ return {x:0,y:0} }

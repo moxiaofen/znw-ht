@@ -1,6 +1,6 @@
 <template>
   <div >
-    <ToolBar ></ToolBar>
+   
     <img src='/static/assets/btnImgError.png' @click="netError" />
 
   </div>
@@ -8,15 +8,12 @@
 </template>
 <script>
 
-  import ToolBar from '../ToolBar.vue'
 
   export default{
 
-    components: {ToolBar},
+    components: {},
     data(){
       return {
-
-
       }
     },
     methods:{
