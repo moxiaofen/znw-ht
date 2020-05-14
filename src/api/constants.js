@@ -65,6 +65,10 @@ const APP_TRANS_APPLY = 'app/transApplyMsg';
 const APP_TRANS_APPLY_DETAIL = 'app/findAccountTransferByContractNo';
 //查询池保理池中可用余额(根据合同编号)
 const FIND_POOL_LIMIT_AMOUNT = 'app/findPoolLimitAmount'  
+//提款申请查询合同？
+const FIND_CONTRACT_LIST = 'app/findContractList'  
+//提款申请提交
+const LOAD_INFO_APPLY = 'app/loanInfoApply'  
 //授信合同列表查询
 const QUERY_CONTRACT_LIST = 'app/queryContractList';
 //申请授权码
@@ -228,6 +232,8 @@ export default {
   APP_TRANS_APPLY,
   APP_TRANS_APPLY_DETAIL,
   FIND_POOL_LIMIT_AMOUNT,
+  FIND_CONTRACT_LIST,
+  LOAD_INFO_APPLY,
   QUERY_CONTRACT_LIST,
   APPLY_AUTHORIZE_CODE,
   COMFIRM_AUTHORIZE_CODE,
