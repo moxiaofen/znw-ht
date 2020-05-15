@@ -47,9 +47,14 @@
 </template>
 
 <script>
+  import { NavBar,PullRefresh ,List  } from 'vant';
+
   export default {
     name: "FinancingProgress",
     components: {
+        [NavBar.name]: NavBar,
+        [PullRefresh.name]: PullRefresh,
+        [List.name]: List,
     },
     data() {
       return {

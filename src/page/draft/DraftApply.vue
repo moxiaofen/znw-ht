@@ -10,12 +10,14 @@
     />
 
     <div class="content">
-      <van-cell title="选择授信合同" value="" />
+      <van-cell title="选择合同" value="" />
       <van-field name="radio" label="">
         <template #input>
           <van-radio-group class="w100"  v-model="radio" direction="columns" value='radio'>
-            <van-radio  class="credit-item" :name="index" v-for='(item,index) in creditList' :key='index'>
-                <van-cell center :title="item.creditContractNo" :value="item.contractEndDate" :label="item.custName" />             
+            <van-radio  class="credit-item" :name="index" v-for='(item,index) in contractList' :key='index'>             
+                <span class="hide">{{item.contractStatus}}}</span>
+                <span class="hide">{{item.contractNo}}}</span>
+                <van-cell center :title="item.contractCode" :value="formatType(item.contractType)" :label="item.contractName" />             
             </van-radio>
           </van-radio-group>
         </template>
@@ -30,10 +32,17 @@
 </template>
 
 <script>
+  import { NavBar,Cell,Field ,RadioGroup, Radio  } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
+  
   export default {
     name: "BusinessApply",
     components: {
+      [NavBar.name]: NavBar,
+      [Cell.name]: Cell,
+      [Field.name]: Field,
+      [RadioGroup.name]: RadioGroup,
+      [Radio.name]: Radio,
       LoginButton
     },
     data() {
@@ -42,8 +51,9 @@
         enable: true, //立即注册 按钮默认不可用
         
         radio: '',
-        creditList:[],
-        creditContractNo:'',
+        contractList:[],
+        contractNo:'',
+        contractType:'',
       }
     },
     mounted() {
@@ -57,16 +67,19 @@
     methods: {
       //获取新增时的数据
       queryContractList() {
-           const url = this.$api.ROOT + this.$Constants.QUERY_CONTRACT_LIST;
+           const url = this.$api.ROOT + this.$Constants.FIND_CONTRACT_LIST;
+           //const url = this.$api.ROOT + this.$Constants.QUERY_CONTRACT_LIST;
            const data = {
              //"custNo":sessionStorage.getItem('custNo'),
              "custNo":'C000250',
            }
-           this.$http.post(url,{"creditContract":data})
+           this.$http.post(url,data)
+           //this.$http.post(url,{"creditContract":data})
            .then(function (res) { 
+             console.log(res)
                const data = JSON.parse(res.data);
-               this.creditList = data.records 
-               console.log(this.creditList)                               
+               console.log(data)
+               this.contractList = JSON.parse(res.data)
           }).catch(function () {
              this.$toast(this.$ERRCODE.STATIC_ERRORCDDE.EXCEPTION);
           })
@@ -76,18 +89,26 @@
               this.$toast('请先选择合同');
               return
           }  
-          this.creditContractNo = this.creditList[this.radio].creditContractNo;       
-          console.log(this.creditList[this.radio].creditContractNo)
-          console.log(this.radio)
-         
+          sessionStorage.setItem('loanInfo',JSON.stringify(this.contractList[this.radio]))
           this.$router.push({
-            path: this.$RM.DraftApplyDetail,
-            //query:{id: this.creditContractNo} 
-            query:{id: 'CON2019082000000292'}        
+            path: this.$RM.DraftApplyDetail     
           })
       },
       cancel(){
           this.showPop = false    
+      },
+      //格式化合同类型 contract_type：01：定保理   02：池保理   03 ：票据保理
+      formatType(num){
+        switch(num) {
+            case "01":
+                return "定保理" 
+                break;
+            case "02":
+                return "池保理" 
+                break;
+            default:
+                return "票据保理"  
+        } 
       },
 
     }

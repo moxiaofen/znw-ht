@@ -22,8 +22,8 @@
                 <li class="bber" v-for="(item,index) in brokerList" :key='index' @click="toDetail(item.assetsNo)">
                   <div class="item-list">
                     <div class=" item-line1 vam">
-                        <span class="contract-name flex1">{{item.absName}}</span>
-                        <span class="contract-no flex1">{{item.assetsNo}}</span>
+                        <span class="contract-name flex1 word-break">{{item.absName}}</span>
+                        <span class="contract-no flex1 word-break">{{item.assetsNo}}</span>
                     </div>
                     <div class=" item-line1">
                         <span class="contract-flex">{{item.securitiesTrader}}</span>
@@ -48,8 +48,13 @@
 </template>
 
 <script>
+  import { NavBar,PullRefresh ,List  } from 'vant';
   export default {
+    name: "brokerProgress",
     components: {
+        [NavBar.name]: NavBar,
+        [PullRefresh.name]: PullRefresh,
+        [List.name]: List,
     },
     data() {
       return {

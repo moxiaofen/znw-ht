@@ -23,11 +23,13 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
 
   export default {
     name: "FianancingApplyChange",
     components: {
+      [NavBar.name]: NavBar,
       LoginButton,
     },
 

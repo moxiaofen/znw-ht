@@ -63,10 +63,15 @@
 // avascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })()
 
   import LoginButton from '@/components/LoginButton.vue'
+  import { NavBar,DropdownMenu, DropdownItem,Cell } from 'vant';
     export default {
         name: "identity",
         components: {
-          LoginButton,
+          LoginButton,         
+          [NavBar.name]: NavBar,
+          [DropdownMenu.name]: DropdownMenu,
+          [DropdownItem.name]: DropdownItem,
+          [Cell.name]: Cell,          
         },
         computed: {},
         data() {

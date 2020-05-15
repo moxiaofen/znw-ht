@@ -46,14 +46,14 @@
       </div>
 
       <!--多选框-->
-      <div class='top'>        
+      <div class='top1'>        
           <div><span class='inputLable select-left'>意向产品</span></div>
           <van-checkbox-group v-model="vCheckboxGroup" direction="horizontal" class="select-right">
             <van-checkbox :name="index" shape="square"  v-for="(item,index) in checkboxList" class="select-item" :key="item.id" >{{item.title}}</van-checkbox>
           </van-checkbox-group>    
       </div>
 
-      <div class="btn-box">
+      <div class="btn-box-fix">
         <LoginButton name="提交" :isInputNonEmpty="enable" @click.native="toNext" borderRadius="6px"></LoginButton>
       </div>
       
@@ -62,11 +62,18 @@
 </template>
 
 <script>
+  import { NavBar,DropdownMenu, DropdownItem , Checkbox, CheckboxGroup } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
+
   export default {
     name: "FianancingEOI",
     components: {
-      LoginButton
+       [NavBar.name]: NavBar,
+       [DropdownMenu.name]: DropdownMenu,
+       [DropdownItem.name]: DropdownItem,
+       [Checkbox.name]: Checkbox ,
+       [CheckboxGroup.name]: CheckboxGroup ,
+       LoginButton
     },
     computed: {},
     data() {
@@ -245,7 +252,4 @@
   width: 15px;
   height: 15px;
 }
-  .btn-box{
-    padding:0 10px 10px;
-  }
 </style>

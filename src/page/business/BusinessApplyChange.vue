@@ -24,11 +24,12 @@
 
 <script>
   import LoginButton from '@/components/LoginButton.vue'
-
+  import { NavBar } from 'vant';
   export default {
     name: "BusinessApplyChange",
     components: {
       LoginButton,
+      [NavBar.name]: NavBar,
     },
 
     data() {

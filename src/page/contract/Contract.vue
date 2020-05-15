@@ -44,9 +44,16 @@
 </template>
 
 <script>
+  import { NavBar,PullRefresh ,List ,Tab, Tabs } from 'vant';
+
   export default {
     name: "Contract",
     components: {
+        [NavBar.name]: NavBar,
+        [PullRefresh.name]: PullRefresh,
+        [List.name]: List,
+        [Tab.name]: Tab,
+        [Tabs.name]: Tabs              
     },
     data() {
       return {

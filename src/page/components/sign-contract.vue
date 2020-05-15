@@ -31,8 +31,14 @@
 </template>
 
 <script>
-import { Toast } from 'vant';
+import { Popup ,Field, Button  } from 'vant';
+
 export default {
+  components: {
+      [Popup.name]: Popup,
+      [Field.name]: Field,
+      [Button.name]: Button
+},
   props:['showPop','contractNo'],
   data() {
     return {

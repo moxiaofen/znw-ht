@@ -42,11 +42,16 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import Encrypt from '../../api/encrypt.js'
   var count = 0;//数字密码计数
+
   export default {
-    components: { LoginButton},
+    components: { 
+      LoginButton,
+      [NavBar.name]: NavBar,
+    },
     data () {
       return {
         enable: false,//发送验证码 按钮默认不可用
@@ -165,14 +170,12 @@
 
 </script>
 <style>
-.reset-bar .van-icon{
-    color: #111111 !important;
+#app .reset-bar .van-icon{
+    color: #111111;
 }
-
 </style>
-
 <style scoped>
-.reset-bar .van-icon{
+#app .reset-bar .van-icon{
     color: #111111;
 }
 

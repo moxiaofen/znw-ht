@@ -32,19 +32,19 @@
 </template>
 
 <script>
-
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   //import PopCont from './AddReceivablesPop'
   import NewAffix from '../components/new-affix'
 
   export default {
     components: {
+      [NavBar.name]: NavBar,
       LoginButton,
       NewAffix
     },
     props:['acctList'],
     computed: {},
-
 
     data() {
       return {

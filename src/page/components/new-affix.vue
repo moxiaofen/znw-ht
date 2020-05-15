@@ -78,8 +78,11 @@
 </template>
 
 <script>
+    import { Popup } from 'vant';
+
     export default {
         components: {
+             [Popup.name]: Popup,
         },
         props:["optDate",'itemShow','dataFileList'],
         computed: {},

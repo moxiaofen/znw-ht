@@ -131,14 +131,19 @@
 </template>
 
 <script>
+  import { NavBar,DropdownMenu, DropdownItem ,Calendar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import AddReceivablesList from '../components/add-receivables-list'
 
   export default {
     name: "FianancingApply",
     components: {
-      LoginButton,
-      AddReceivablesList
+       [NavBar.name]: NavBar,
+       [DropdownMenu.name]: DropdownMenu,
+       [DropdownItem.name]: DropdownItem,
+       [Calendar.name]: Calendar ,
+       LoginButton,
+       AddReceivablesList
     },
     data() {
       return {

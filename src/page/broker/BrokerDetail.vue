@@ -55,8 +55,11 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   export default {
+    name: "brokerDetail",
     components: {
+        [NavBar.name]: NavBar,
     },
     data() {
       return {

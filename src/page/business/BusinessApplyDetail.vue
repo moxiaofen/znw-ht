@@ -33,6 +33,7 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import NewReceivables from '../components/new-receivables'
   import NewAffix from '../components/new-affix'
@@ -40,6 +41,7 @@
   export default {
     name: "BusinessApplyDetail",
     components: {
+      [NavBar.name]: NavBar,
       LoginButton,
       NewReceivables,
       NewAffix

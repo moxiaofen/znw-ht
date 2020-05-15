@@ -44,10 +44,13 @@
 </template>
 
 <script>
+  import { NavBar , Calendar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import AddReceivablesList from '../components/add-receivables-list'
   export default {
     components: {
+      [NavBar.name]: NavBar,
+      [Calendar.name]: Calendar ,
       LoginButton,
       AddReceivablesList
     },

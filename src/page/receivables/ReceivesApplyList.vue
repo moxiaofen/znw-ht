@@ -54,10 +54,16 @@
 </template>
 
 <script>
+
+  import { NavBar,PullRefresh ,List  } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import CreditList from '../components/credit-list'
+  
   export default {
     components: {
+      [NavBar.name]: NavBar,
+      [PullRefresh.name]: PullRefresh,
+      [List.name]: List,
       LoginButton,
       CreditList
     },

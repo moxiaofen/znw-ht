@@ -62,11 +62,14 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import Encrypt from '../../api/encrypt.js'
-  import _ from 'lodash'
   export default {
-    components: { LoginButton},
+    components: {
+       LoginButton ,
+       [NavBar.name]: NavBar,
+    },
     data () {
       return {
         time: '获取验证码', //倒计时
@@ -398,13 +401,12 @@
 
 </script>
 <style>
-.reset-bar .van-icon{
-    color: #111111 !important;
+#app .reset-bar .van-icon{
+    color: #111111;
 }
-
 </style>
 <style scoped>
-.reset-bar .van-icon{
+#app .reset-bar .van-icon{
     color: #111111;
 }
 .full-page{

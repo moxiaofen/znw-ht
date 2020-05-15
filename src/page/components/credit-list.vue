@@ -25,7 +25,16 @@
 </template>
 
 <script>
+import { Popup,Cell,Field ,RadioGroup, Radio  } from 'vant';
+
 export default {
+  components: {
+      [Popup.name]: Popup,
+      [Cell.name]: Cell,
+      [Field.name]: Field,
+      [RadioGroup.name]: RadioGroup,
+      [Radio.name]: Radio
+  },
   props:['showPop','creditList'],
   data() {
     return {

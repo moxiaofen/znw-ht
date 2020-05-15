@@ -95,11 +95,17 @@
 </template>
 
 <script>
+  import { NavBar,DropdownMenu, DropdownItem ,Calendar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
+
   export default {
     name: "companyInfo",
     components: {
-      LoginButton
+       LoginButton,
+       [NavBar.name]: NavBar,
+       [DropdownMenu.name]: DropdownMenu,
+       [DropdownItem.name]: DropdownItem,
+       [Calendar.name]: Calendar ,
     },
     computed: {},
     data() {

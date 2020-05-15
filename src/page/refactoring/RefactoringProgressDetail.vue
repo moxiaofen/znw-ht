@@ -83,10 +83,13 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import RefactoringList from '../components/refactoring-list'
   import FileList from '../components/file-list'
+  
   export default {
     components: {
+      [NavBar.name]: NavBar,
       RefactoringList,
       FileList
     },

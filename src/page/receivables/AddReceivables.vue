@@ -126,13 +126,18 @@
 </template>
 
 <script>
+  import { NavBar,DropdownMenu, DropdownItem ,Calendar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import NewAffix from '../components/new-affix'
 
   export default {
     components: {
-      LoginButton,
-      NewAffix
+       [NavBar.name]: NavBar,
+       [DropdownMenu.name]: DropdownMenu,
+       [DropdownItem.name]: DropdownItem,
+       [Calendar.name]: Calendar ,
+       LoginButton,
+       NewAffix
     },
     computed: {},
     data() {

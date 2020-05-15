@@ -71,13 +71,16 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import BrokerList from '../components/broker-list'
   import FileList from '../components/file-list'
 
   export default {
+    name: "brokerProgressDetail",
     components: {
       BrokerList,
-      FileList
+      FileList,
+      [NavBar.name]: NavBar,
     },
     data() {
       return {

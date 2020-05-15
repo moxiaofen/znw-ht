@@ -105,6 +105,7 @@
 </template>
 
 <script>
+  import { NavBar,DropdownMenu, DropdownItem  } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import AcctList from '../components/acct-list'
   import PaymentList from '../components/payment-list'
@@ -113,6 +114,9 @@
   export default {
     name: "LedgerDetail",
     components: {
+      [NavBar.name]: NavBar,
+      [DropdownMenu.name]: DropdownMenu,
+      [DropdownItem.name]: DropdownItem,
       LoginButton,
       AcctList,
       PaymentList,

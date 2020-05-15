@@ -44,8 +44,11 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
+  
   export default {
     components: {
+        [NavBar.name]: NavBar,
     },
     computed: {},
 

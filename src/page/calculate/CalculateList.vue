@@ -1,5 +1,5 @@
 <template>
-  <div class="bg">
+  <div>
     <van-nav-bar
       class="bar"
       title="还款测算"
@@ -55,9 +55,13 @@
 </template>
 
 <script>
+  import { NavBar,PullRefresh ,List  } from 'vant';
   export default {
     name: "CalculateList",
     components: {
+        [NavBar.name]: NavBar,
+        [PullRefresh.name]: PullRefresh,
+        [List.name]: List,
     },
     computed: {},
     data() {

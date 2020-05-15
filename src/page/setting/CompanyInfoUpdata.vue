@@ -56,11 +56,18 @@
 </template>
 
 <script>
+  import { NavBar,DropdownMenu, DropdownItem , Checkbox, CheckboxGroup } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
+
   export default {
     name: "companyInfoUpdata",
     components: {
-      LoginButton
+       LoginButton,
+       [NavBar.name]: NavBar,
+       [DropdownMenu.name]: DropdownMenu,
+       [DropdownItem.name]: DropdownItem,
+       [Checkbox.name]: Checkbox ,
+       [CheckboxGroup.name]: CheckboxGroup 
     },
     computed: {},
     data() {

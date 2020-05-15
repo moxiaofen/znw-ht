@@ -25,11 +25,14 @@
 </template>
 
 <script>
+import { NavBar } from 'vant';
 import SignContract from '../components/sign-contract'
 import pdf from 'vue-pdf'
+
 export default {
   name: "ContractPdf",
   components:{
+      [NavBar.name]: NavBar,
       SignContract,
       pdf
   },

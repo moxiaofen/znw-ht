@@ -75,10 +75,13 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
+  
   export default {
     name: "CalculateDetail",
     components: {
+      [NavBar.name]: NavBar,
       LoginButton
     },
     computed: {},

@@ -12,10 +12,10 @@ Vue.config.productionTip = false
 import 'lib-flexible/flexible.js'
 import MintUI from 'mint-ui';
 import 'mint-ui/lib/style.min.css'
-import Vant from 'vant';
-import 'vant/lib/index.css';
+// import Vant from 'vant';
+//import 'vant/lib/index.css';
 
-Vue.use(Vant);
+//Vue.use(Vant);
 Vue.use(MintUI);
 import './css/resetVant.css'
 import './css/mint.css'

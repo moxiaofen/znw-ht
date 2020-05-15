@@ -17,8 +17,11 @@
   </div>
 </template>
 <script>
+  import { NavBar } from 'vant';
+
   export default {
     components: {
+       [NavBar.name]: NavBar,
     },
     data() {
       return {}
@@ -52,5 +55,9 @@
   .title {
     color: #343434;
     font-size: 15px;
+  }
+  .bar {
+    background-color: #FFC600;
+    color: #ffffff;
   }
 </style>

@@ -24,8 +24,13 @@
 
 <script>
   import Encrypt from '../../api/encrypt.js'
+  import { NavBar , Cell, CellGroup } from 'vant';
+
   export default {
     components: {
+        [NavBar.name]: NavBar,
+        [Cell.name]: Cell,
+        [CellGroup.name]: CellGroup,
     },
     computed: {},
     data() {

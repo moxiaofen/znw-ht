@@ -34,8 +34,12 @@
 </template>
 
 <script>
+    import { SwipeCell,Button } from 'vant';
+
     export default {
         components: {
+            [SwipeCell.name]: SwipeCell,
+            [Button.name]: Button,
         },
         props:['itemShow','acctList'],
         computed: {},

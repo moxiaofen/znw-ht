@@ -127,6 +127,10 @@
     -moz-osx-font-smoothing: grayscale;
     color: #000000;
   }
-
-
+  #app .van-nav-bar .van-icon {
+    color: #fff;
+  }
+  #app .van-dropdown-menu__bar{
+        box-shadow: none;
+  }
 </style>

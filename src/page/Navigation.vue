@@ -11,7 +11,7 @@
       </mt-tab-container>
     </div>
 
-    <mt-tabbar v-model="selected" fixed class="page-up">
+    <mt-tabbar v-model="selected" fixed id="pageUp">
       <mt-tab-item id="首页">
         <img slot="icon" :src="borrowIcon">
         <span :style="{color:borrowColor}">首页</span>
@@ -40,10 +40,10 @@
     },
     computed: {
       borrowIcon() {
-        return 'static/assets/'.concat(this.selected == ('首页') ? 'home_selected.png' : 'home_normal.png')
+        return require('../assets/'.concat(this.selected == ('首页') ? 'home_selected.png' : 'home_normal.png'))
       },
       repayIcon(){
-        return 'static/assets/'.concat(this.selected == ('我的') ? 'mine_selected.png' : 'mine_normal.png')
+        return require('../assets/'.concat(this.selected == ('我的') ? 'mine_selected.png' : 'mine_normal.png'))
       },
 
       borrowColor(){
@@ -126,7 +126,7 @@
     -ms-user-select: none;
     user-select: none;
   }
-.page-up{
+#pageUp{
   z-index: 10;
 }
 </style>

@@ -64,14 +64,19 @@
 
 <script>
 // avascript:(function () { var script = document.createElement('script'); script.src="//cdn.jsdelivr.net/npm/eruda"; document.body.appendChild(script); script.onload = function () { eruda.init() } })()
-
+  import { NavBar } from 'vant';
   import Checkbox from '@/components/Checkbox'
   import LoginButton from '@/components/LoginButton.vue'
   import Encrypt from '../../api/encrypt.js'
   import SM from '@/api/SessionManager.js'
+  
   export default {
     name: SM.Register,
-    components: {Checkbox, LoginButton},
+    components: {
+      [NavBar.name]: NavBar,
+      Checkbox, 
+      LoginButton
+    },
     data () {
       return {
         check: false,
@@ -318,13 +323,12 @@
 
 </script>
 <style>
-.reset-bar .van-icon{
+#app .reset-bar .van-icon{
     color: #111111;
 }
-
 </style>
 <style scoped>
-.reset-bar .van-icon{
+#app .reset-bar .van-icon{
     color: #111111;
 }
 .full-page{

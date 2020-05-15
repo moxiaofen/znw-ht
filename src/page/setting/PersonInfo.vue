@@ -12,7 +12,7 @@
     <van-cell-group class="content">
       <van-cell  title="头像">          
            <img style="width:60px;height:60px" ref='img' alt="handleFile" :src="src" />
-           <input type="file" accept="image/*" class="van-uploader__input" ref="inputImg" @change="handleFile">
+           <input type="file" accept="image/*" class="van-uploader__input hide" ref="inputImg" @change="handleFile">
       </van-cell>
 
       <van-cell title="用户昵称" is-link :value="loginid"  to="/setting/PersonInfoName" />
@@ -26,8 +26,13 @@
 </template>
 
 <script>
+  import { NavBar , Cell, CellGroup } from 'vant';
+
   export default {
     components: {
+        [NavBar.name]: NavBar,
+        [Cell.name]: Cell,
+        [CellGroup.name]: CellGroup,
     },
     computed: {},
     data() {

@@ -49,11 +49,14 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
   import AcctList from '../components/acct-list'
+  
   export default {
     name: "ReceivablesApplyDetail",
     components: {
+      [NavBar.name]: NavBar,
       LoginButton,
       AcctList
     },

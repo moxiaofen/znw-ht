@@ -122,13 +122,16 @@
 </template>
 
 <script>
-
+  import { NavBar,DropdownMenu, DropdownItem } from 'vant';
   import Checkbox from '@/components/Checkbox'
   import LoginButton from '@/components/LoginButton.vue'
   import NewAffix from '../components/new-affix'
     export default {
-        name: "identity",
+        name: "identityAct",
         components: {
+          [NavBar.name]: NavBar, 
+          [DropdownMenu.name]: DropdownMenu,
+          [DropdownItem.name]: DropdownItem,
           Checkbox,
           LoginButton,
           NewAffix
