@@ -32,10 +32,17 @@
 </template>
 
 <script>
+  import { NavBar,Cell,Field ,RadioGroup, Radio  } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
+  
   export default {
     name: "BusinessApply",
     components: {
+      [NavBar.name]: NavBar,
+      [Cell.name]: Cell,
+      [Field.name]: Field,
+      [RadioGroup.name]: RadioGroup,
+      [Radio.name]: Radio,
       LoginButton
     },
     data() {
@@ -62,7 +69,6 @@
       queryContractList() {
            const url = this.$api.ROOT + this.$Constants.FIND_CONTRACT_LIST;
            //const url = this.$api.ROOT + this.$Constants.QUERY_CONTRACT_LIST;
-          
            const data = {
              //"custNo":sessionStorage.getItem('custNo'),
              "custNo":'C000250',
@@ -83,18 +89,9 @@
               this.$toast('请先选择合同');
               return
           }  
-          this.contractNo = this.contractList[this.radio].contractNo; 
-          this.contractType = this.contractList[this.radio].contractType;      
-          console.log(this.contractList[this.radio].contractNo)
-          console.log(this.radio)
-         
+          sessionStorage.setItem('loanInfo',JSON.stringify(this.contractList[this.radio]))
           this.$router.push({
-            path: this.$RM.DraftApplyDetail,
-            //query:{id: 'CON2019082100000320'} 
-            query:{
-              id: this.contractNo,
-              type:this.contractType
-            }        
+            path: this.$RM.DraftApplyDetail     
           })
       },
       cancel(){

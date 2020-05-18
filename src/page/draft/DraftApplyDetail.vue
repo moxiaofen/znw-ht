@@ -79,11 +79,13 @@
 </template>
 
 <script>
+  import { NavBar } from 'vant';
   import LoginButton from '@/components/LoginButton.vue'
 
   export default {
     name: "BusinessApplyDetail",
     components: {
+        [NavBar.name]: NavBar,
         LoginButton,
     },
     data() {
@@ -95,17 +97,22 @@
         vApplyAmt:'',
         showC:'',//池保理状态
         type:'',//保理类型
+        loanInfo:'',//上一页面带过来的数据
         
       }
+    },
+    created(){
+        this.loanInfo = JSON.parse(sessionStorage.getItem('loanInfo')) 
+        console.log(this.loanInfo)
+        this.queryContractList()
     },
     mounted() {
         // 池保理，显示可用金额，融资金额填
         // 定票保理全部显示，融资金额去除
         //contract_type：01：定保理   02：池保理   03 ：票据保理
-        this.type = this.$route.query.type;
+        this.type = this.loanInfo.contractType;
         if( this.type == '01'|| this.type == '03'){
-            this.showC = false
-            this.queryContractList()
+            this.showC = false            
         }else{
             this.FindPoolLimitAmount()
             this.showC = true
@@ -120,7 +127,7 @@
       FindPoolLimitAmount() {          
            const url = this.$api.ROOT + this.$Constants.FIND_POOL_LIMIT_AMOUNT;
            const data = {
-             //"contractNo":this.$route.query.id,
+             //"contractNo":this.loanInfo.contractNo,
              //"custNo": sessionStorage.getItem('custNo'), 
              "contractNo": "CON2019062800000079",
              "custNo": "C000311"
@@ -138,7 +145,7 @@
            //this.contractNo = this.$route.query.id;
            const url = this.$api.ROOT + this.$Constants.APP_TRANS_APPLY_DETAIL;
            const data = {
-             "contractNo":this.$route.query.id,
+             "contractNo":this.loanInfo.contractNo,
            }
            this.$http.post(url,data)
            .then(function (res) {              
@@ -151,16 +158,34 @@
       //确定提交  
       comfirm(){ 
            const url = this.$api.ROOT + this.$Constants.LOAD_INFO_APPLY;
-           let data 
-           if( this.type == '01'|| this.type == '03'){
-                data.vApplyAmt = this.vApplyAmt
-           }else{
-                data = this.resData
+           let repData = {}
+           let m=new Date().getMonth()+1;//月份
+           m = m < 10 ? "0" + m : m;
+           repData = {
+               custNo : sessionStorage.getItem('custNo'),
+               type : this.loanInfo.contractType,
+               applyAmt : this.resData.applyAmt,
+               creditContractNo : this.loanInfo.contractCode,
+               approveCode : this.loanInfo.approveCode,
+               applyDate : ''+ new Date().getFullYear() + m + new Date().getDate()
            }
-           this.$http.post(url,{'resDataAmount' : data })
+           if( this.type == '02'){          
+                repData.applyAmt = this.vApplyAmt
+           }  
+           //console.log(repData)
+           this.$http.post(url,{'loanInfoApply' : repData })
            .then(function (res) {
-                //console.log(res)
-                this.resData = JSON.parse(res.data);          
+                console.log(res)
+                var resData = JSON.parse(res.data); 
+                resData = JSON.parse(resData)
+                console.log(resData)
+                if (resData.respCode === '000000') {
+                   this.$router.go(-1)
+                   this.$toast('操作成功！'); 
+                } else {
+                   this.$indicator.close();
+                   this.$toast(JSON.parse(resData.respMsg).error_message);             
+                }
           }).catch(function () {
              this.$toast(this.$ERRCODE.STATIC_ERRORCDDE.EXCEPTION);
           })
